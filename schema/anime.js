@@ -1,0 +1,67 @@
+const moment = require('moment')
+module.exports = (sequelize, DataTypes) => {
+  return sequelize.define('anime',{
+    id:{
+      type:DataTypes.INTEGER,
+      primaryKey:true,
+      allowNull:false,
+      autoIncrement:true
+    },
+    name:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      field:'name'
+    },
+    image:{
+      type:DataTypes.JSON,
+      field:'image'
+    },
+    description:{
+      type:DataTypes.STRING,
+      field:'description'
+    },
+    content:{
+      type:DataTypes.STRING,
+      field:'content'
+    },
+    tag:{
+      type:DataTypes.JSON,
+      field:'tag'
+    },
+    stars:{
+      type:DataTypes.INTEGER,
+      allowNull:false,
+      field:'stars',
+      defaultValue:5
+    },
+    top:{
+      type:DataTypes.BOOLEAN,
+      allowNull:false,
+      field:'top',
+      defaultValue: false
+    },
+    flag:{
+      type:DataTypes.INTEGER,
+      allowNull:false,
+      field:'flag',
+      defaultValue: 1
+    },
+    author:{
+      type:DataTypes.STRING,
+      allowNull:true,
+      field:'author'
+    },
+    type:{
+      type:DataTypes.STRING,
+      field:'type'
+    },
+    company:{
+      type:DataTypes.STRING,
+      field:'company'
+    },
+    detailPath:{
+      type:DataTypes.STRING,
+      field:'detailPath'
+    }
+  })
+}

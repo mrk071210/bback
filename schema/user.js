@@ -2,10 +2,16 @@ const moment = require('moment')
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('user',{
     id:{
-      type:DataTypes.INTEGER,
+      type:DataTypes.CHAR(36),
       primaryKey:true,
       allowNull:false,
-      autoIncrement:true
+      field:'id',
+      // references: {
+      //   // 引用另一个模型
+      //   model: wxUser,
+      //   // 连接模型的列表
+      //   key: 'userId'
+      // }
     },
     userName:{
       type:DataTypes.STRING,

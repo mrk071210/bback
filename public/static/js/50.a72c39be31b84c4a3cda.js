@@ -1,2 +1,0 @@
-webpackJsonp([50],{e2Dg:function(e,t){e.exports={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("About Us")])},staticRenderFns:[]}},fD29:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s=n("e2Dg"),r=n.n(s),u=n("VU/8")({name:"AboutUs"},r.a,!1,null,null,null);t.default=u.exports}});
-//# sourceMappingURL=50.a72c39be31b84c4a3cda.js.map

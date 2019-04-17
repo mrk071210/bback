@@ -1,12 +1,12 @@
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  'mmmt',
-  'root',
+  'postgres',
+  'calamus',
   'kk071210',
   {
-    dialect: 'mysql',
+    dialect: 'postgres',
     host:'localhost',
-    port: 3306,
+    port: 5432,
     timestamp:true,
     pool: {
       max: 5,

@@ -160,5 +160,9 @@ class userController {
         }
     }
   }
+  static async saveWxUser(ctx){
+    let req = ctx.request.body
+    
+  }
 }
 module.exports = userController;

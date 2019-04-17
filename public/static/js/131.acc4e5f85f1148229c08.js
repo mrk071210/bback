@@ -1,0 +1,2 @@
+webpackJsonp([131],{fD29:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n("myql"),s=n.n(r),l=n("C7Lr")({name:"AboutUs"},s.a,!1,null,null,null);t.default=l.exports},myql:function(e,t){e.exports={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("About Us")])},staticRenderFns:[]}}});
+//# sourceMappingURL=131.acc4e5f85f1148229c08.js.map
