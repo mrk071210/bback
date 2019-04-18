@@ -58,5 +58,21 @@ class articleController {
         ctx.body = statusCode.SUCCESS('201','查找失败',null);
       }
   }
+  //更新
+  static async updateArticle(ctx,next){
+    let id = ctx.request.body.id;
+    let data = ctx.request.body;
+    delete data.id
+    delete data.updatedAt
+    delete data.createAt
+      try{
+        const ret = await articleModel.updateArticleById(id,data);
+        ctx.response.status = 200;
+        ctx.body = statusCode.SUCCESS('200','更新成功',ret);
+      } catch(err){
+        ctx.response.status = 412;
+        ctx.body = statusCode.SUCCESS('201','更新失败',null);
+      }
+  }
 }
 module.exports = articleController;

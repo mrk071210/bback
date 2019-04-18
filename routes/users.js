@@ -50,6 +50,12 @@ router.post('/article/create', ArticleController.create)
 router.get('/article/findAll', ArticleController.findAll)
 //查询article详情
 router.get('/article/getDetail', ArticleController.findById)
+//更新article
+router.post('/article/update', ArticleController.updateArticle)
+
+//github授权登陆
+router.post('/getUser', UserController.githubLogin)
+
 
 //保存微信用户
 // router.post('/user/saveWx', UserController.findAll)

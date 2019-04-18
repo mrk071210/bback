@@ -11,12 +11,21 @@ class ArticleModel {
   // 查询所有
   static async findAllArticle(){
     return await Article.findAll({
+      order:[['createdAt', 'DESC']],
       attributes: { exclude: ['content'] }
     });
   }
   // 根据ID查询
   static async findArticleById(id){
     return await Article.findOne({
+        where:{id}
+      });
+  }
+  // 更新
+  static async updateArticleById(id,data){
+    return await Article.update(
+        data,
+        {
         where:{id}
       });
   }

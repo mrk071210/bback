@@ -4,7 +4,7 @@ const statusCode = {
         data:data,
         head:{
           code: code,
-          success:'false',
+          success:false,
           msg:msg
         }
           
@@ -16,7 +16,7 @@ const statusCode = {
         data:data,
         head:{
           code:code,
-          success:'true',
+          success:true,
           msg:msg
         }
       }

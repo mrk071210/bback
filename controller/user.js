@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken');
 const secret = require('../config/secret');
 const util = require('util')
 const verify = util.promisify(jwt.verify);
+const statusCode = require('../utils/response')
+const config = require('../config/app.config.js')
+const fetch  = require('node-fetch')
 class userController {
   //创建用户
   static async create(ctx,next){
@@ -163,6 +166,47 @@ class userController {
   static async saveWxUser(ctx){
     let req = ctx.request.body
     
+  }
+  //github用户登录
+  static async githubLogin(ctx){
+    let {code} = ctx.request.body
+    if(!code){
+      ctx.response.status = 400;
+      ctx.body = statusCode.SUCCESS('201','code缺失');
+      return
+    }
+    let path = config.GITHUB.access_token_url
+    const params = {
+      client_id: config.GITHUB.client_id,
+      client_secret: config.GITHUB.client_secret,
+      code: code
+    }
+    await fetch(path,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json', 
+      },
+      body:JSON.stringify(params)
+    }).then( res => {
+      return res.text()
+    }).then(body => {
+      const args = body.split('&')
+      let arg = args[0].split('=')
+      const access_token = arg[1]
+      return access_token
+    }).then(async token => {
+      const url = config.GITHUB.user_url+'?access_token='+token
+      await fetch(url).then(res2 =>
+         {
+           return res2.json()
+         }).then(response => {
+           if(response.id){
+            //  ctx.response.session.userInfo = response
+             ctx.response.status = 200;
+             ctx.body = statusCode.SUCCESS('200','登录成功',response);
+           }
+         })
+    })
   }
 }
 module.exports = userController;
