@@ -17,7 +17,7 @@ onerror(app)
 //cors
 app.use(cors())
 // middlewares
-// app.use(count())
+app.use(count())
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))

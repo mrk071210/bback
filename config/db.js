@@ -1,11 +1,11 @@
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
   'postgres',
-  'calamus',
+  'postgres',
   'kk071210',
   {
     dialect: 'postgres',
-    host:'localhost',
+    host:'119.3.235.231',
     port: 5432,
     timestamp:true,
     pool: {
