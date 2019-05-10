@@ -12,6 +12,7 @@ const count = require('./middleware/count')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const secret = require('./config/secret')
+const history = require('./middleware/koa2-connect-history-api-fallback')
 // error handler
 onerror(app)
 //cors
@@ -23,6 +24,9 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
+app.use(history({
+  verbose: true//打出转发日志
+  }));
 app.use(require('koa-static')(__dirname + '/public'))
 // app.use(jwtKoa({secret:secret.sign}).unless({
 //   path:[
