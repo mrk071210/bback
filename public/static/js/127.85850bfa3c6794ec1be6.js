@@ -1,2 +1,0 @@
-webpackJsonp([127],{"c/iZ":function(n,e){n.exports={render:function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[t("h2",[n._v("AuthConf")]),n._v(" "),t("el-input",{model:{value:n.input,callback:function(e){n.input=e},expression:"input"}})],1)},staticRenderFns:[]}},ogjf:function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var u=t("c/iZ"),i=t.n(u),o=t("C7Lr")({name:"AuthConf",data:function(){return{input:""}},mounted:function(){}},i.a,!1,null,null,null);e.default=o.exports}});
-//# sourceMappingURL=127.85850bfa3c6794ec1be6.js.map

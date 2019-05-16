@@ -1,2 +1,0 @@
-webpackJsonp([124],{aZ1a:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t("vXp8"),a=t.n(r),s=t("C7Lr")({name:"InterfaceConf"},a.a,!1,null,null,null);n.default=s.exports},vXp8:function(e,n){e.exports={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("InterfaceConf")])},staticRenderFns:[]}}});
-//# sourceMappingURL=124.349d4cf6763edf94aeb0.js.map
