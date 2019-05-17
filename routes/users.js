@@ -6,6 +6,8 @@ const AnimeController = require('../controller/anime')
 const TagController = require('../controller/tag')
 const ArticleController = require('../controller/article')
 const deviceController = require('../controller/device')
+const TrackController = require('../controller/track')
+
 const router = new Router({
   // prefix:'/user'
 })
@@ -62,6 +64,10 @@ router.post('/device/bind', deviceController.create)
 
 //取消绑定设备
 router.post('/device/cancel', deviceController.cancel)
+
+//根据uuid查询设备轨迹
+router.post('/tract/trackById', TrackController.getById)
+
 //保存微信用户
 // router.post('/user/saveWx', UserController.findAll)
 module.exports = router
